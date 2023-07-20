@@ -35,6 +35,20 @@ do
     DVM_HandleUpdate()
     DVM_HandleDraw()
     
+    /*
+    Print( DVM_InputHandler_Data.up )
+    Print( DVM_InputHandler_Data.down )
+    Print( DVM_InputHandler_Data.left )
+    Print( DVM_InputHandler_Data.right )
+    Print( DVM_InputHandler_Data.pause )
+    Print( DVM_InputHandler_Data.confirm )
+    Print( DVM_InputHandler_Data.cancel )
+    Print( DVM_InputHandler_Data.pointer )
+    Print( DVM_InputHandler_Data.pointerPosX )
+    Print( DVM_InputHandler_Data.pointerPosY )
+    *
+    
+    
     Sync()
 loop
 
