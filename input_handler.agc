@@ -1,6 +1,7 @@
 // File: input_handler.agc
 // Created: 23-07-20
 
+// Type Definitions
 type DVM_InputData
 	up as integer
 	down as integer
@@ -24,9 +25,12 @@ type DVM_InputBindings
 	cancel as integer[]
 endtype
 
+
+// Global Definitions
 global DVM_InputHandler_Data as DVM_InputData
 global DVM_InputHandler_InputBindings as DVM_InputBindings
 
+// Function Definitions
 function DVM_InputHandler_Setup()
 	DVM_InputHandler_InputBindings.up = [KEY_UP, KEY_W]
 	DVM_InputHandler_InputBindings.down = [KEY_DOWN, KEY_S]

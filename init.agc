@@ -21,4 +21,5 @@ endfunction
 
 function DVM_GameSetup()
 	DVM_InputHandler_Setup()
+	DVM_SceneManager_PushScene(DVM_CONST_TEST_SCENE)
 endfunction

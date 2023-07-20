@@ -1,0 +1,117 @@
+//Scene file do not make any changes here.
+global test_scene_base_width = 1280
+global test_scene_base_height = 720
+global test_scene_device_width = 1280
+global test_scene_device_height = 720
+global test_scene_fadesprite, test_scene_fadeimage as integer
+global test_scene_tween# as float
+global test_scene_change_window = 1
+global test_scene_loaded = 0
+global test_scene_images as integer[2]
+global test_scene_sprites as integer[1]
+global test_scene_sprites_count_x as float[1]
+global test_scene_sprites_count_y as float[1]
+
+function test_scene_create_window( winflag as integer )
+	test_scene_change_window = winflag
+endfunction
+
+function test_scene_setup()
+	if test_scene_loaded = 1 then exitfunction
+	test_scene_loaded = 1
+	if test_scene_change_window = 1
+		SetVirtualResolution(test_scene_base_width,test_scene_base_height)
+		SetWindowSize(test_scene_device_width,test_scene_device_height,0)
+		SetClearColor(0,0,0)
+	endif
+	SetPhysicsWallTop(1)
+	SetPhysicsWallBottom(1)
+	SetPhysicsWallLeft(1)
+	SetPhysicsWallRight(1)
+endfunction
+
+function test_scene_sync()
+	if test_scene_loaded = 0 then test_scene_setup()
+	test_scene_tween# = 60/(1.0/GetFrameTime())
+endfunction
+
+function test_scene_cleanup()
+	local i as integer
+	if test_scene_loaded = 0 then exitfunction
+	for i = 0 to test_scene_sprites.length
+		if GetSpriteExists( test_scene_sprites[i] ) then DeleteSprite( test_scene_sprites[i] )
+	next i
+		if GetSpriteExists(test_scene_fadesprite) then DeleteSprite(test_scene_fadesprite)
+		test_scene_fadesprite = 0
+		if GetImageExists(test_scene_fadeimage) then DeleteImage(test_scene_fadeimage)
+	for i = 0 to test_scene_images.length
+		if GetImageExists( test_scene_images[i] ) then DeleteImage( test_scene_images[i] )
+	next i
+	test_scene_loaded = 0
+endfunction
+
+function test_scene_fade( percent as float )
+	local fMul as float
+	local i as integer
+	fMul = percent / 100.0
+	if fMul > 1.0 then fMul = 1.0
+	if fMul < 0.0 then fMul = 0.0
+	if fMul = 1.0
+		if GetSpriteExists(test_scene_fadesprite) then DeleteSprite(test_scene_fadesprite)
+		test_scene_fadesprite = 0
+		if GetImageExists(test_scene_fadeimage) then DeleteImage(test_scene_fadeimage)
+		exitfunction
+	endif
+	if test_scene_loaded = 0 then test_scene_setup()
+	if not GetSpriteExists( test_scene_fadesprite )
+		test_scene_fadeimage = CreateImageColor(0,0,0,255)
+		test_scene_fadesprite = CreateSprite(test_scene_fadeimage)
+		SetSpriteDepth(test_scene_fadesprite,0)
+		SetSpritePosition(test_scene_fadesprite,0,0)
+		SetSpriteSize(test_scene_fadesprite,GetDeviceWidth(),GetDeviceHeight())
+	endif
+	SetSpriteColor(test_scene_fadesprite,0,0,0,255-255*fMul)
+endfunction
+
+function test_scene_GetNextVirtualButton( )
+	local i as integer
+	local ret as integer
+	ret = 1
+	for i = 1 to 100
+		if not GetVirtualButtonExists( i )
+			ret = i
+			exit
+		endif
+	next i
+endfunction ret
+
+
+REMSTART
+##################################################
+#### Settings: Do not make any changes below. ####
+##################################################
+
+scenename: test_scene
+gridx: 32.000000
+gridy: 32.000000
+gridon: 1
+sceneresolutiontext: L: 1280x720 (1.78)   Samsung Galaxy S3 
+screenwidth: 1280
+screenheight: 720
+scenebackr: 0
+scenebackg: 0
+scenebackb: 0
+scenebacka: 255
+followdeviceres: 0
+basewidth: 1280
+baseheight: 720
+scenegravityx: 0.000000
+scenegravityy: 50.000000
+scenewalltop: 1
+scenewallbottom: 1
+scenewallleft: 1
+scenewallright: 1
+scenemaxpolygon: 8
+scenepercentage: 0
+
+REMEND

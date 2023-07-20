@@ -17,3 +17,6 @@
 #constant DVM_CONST_INPUT_PRESSED = 1
 #constant DVM_CONST_INPUT_HELD = 2
 #constant DVM_CONST_INPUT_RELEASED = 3
+
+//Scene Manager Constants
+#constant DVM_CONST_TEST_SCENE = 0

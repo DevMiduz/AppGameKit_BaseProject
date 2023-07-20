@@ -55,14 +55,19 @@ FILE_2=init.agc;-1
 FILE_3=includes.agc;-1
 FILE_4=input_handler.agc;-1
 FILE_5=key_constants.agc;-1
+FILE_6=scene_manager.agc;-1
+FILE_7=test_scene.scene;-1
 
 [files]
-FILE_NAME_0=0;main.agc;27;0
-FILE_NAME_1=0;constants.agc;22;1
-FILE_NAME_2=0;init.agc;22;2
-FILE_NAME_3=0;includes.agc;4;3
+FILE_NAME_0=1;main.agc;7;0
+FILE_NAME_1=0;constants.agc;21;1
+FILE_NAME_2=0;init.agc;23;2
+FILE_NAME_3=0;includes.agc;5;3
 FILE_NAME_4=0;input_handler.agc;29;4
-FILE_NAME_5=1;key_constants.agc;0;5
+FILE_NAME_5=0;key_constants.agc;31;5
+FILE_NAME_6=0;scene_manager.agc;21;6
+FILE_NAME_7=0;test_scene.scene;0;7
 
 [watchvariables]
+watch_variable=@Version;
 

@@ -46,7 +46,7 @@ do
     Print( DVM_InputHandler_Data.pointer )
     Print( DVM_InputHandler_Data.pointerPosX )
     Print( DVM_InputHandler_Data.pointerPosY )
-    *
+    */
     
     
     Sync()
