@@ -1,24 +1,44 @@
 
-// Project: BaseProject 
-// Created: 23-07-20
+#include "includes.agc"
 
-// show all errors
+// Function Definitions
+function DVM_HandleInput()
+	DVM_InputHandler_InputDataUpdate()
+endfunction
+	
+function DVM_HandlePhysicsUpdate()
+	
+endfunction
+	
+function DVM_HandleUpdate()
+	
+endfunction
 
-SetErrorMode(2)
+function DVM_HandleDraw()
+	
+endfunction
+	
+function DVM_GameCleanup()
+	
+endfunction
 
-// set window properties
-SetWindowTitle( "BaseProject" )
-SetWindowSize( 1024, 768, 0 )
-SetWindowAllowResize( 1 ) // allow the user to resize the window
+// Setup game.
+DVM_EngineSetup()
+DVM_GameSetup()
 
-// set display properties
-SetVirtualResolution( 1024, 768 ) // doesn't have to match the window
-SetOrientationAllowed( 1, 1, 1, 1 ) // allow both portrait and landscape on mobile devices
-SetSyncRate( 30, 0 ) // 30fps instead of 60 to save battery
-SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black borders
-UseNewDefaultFonts( 1 )
-
+// Begin game loop.
 do
     Print( ScreenFPS() )
+    
+    DVM_HandleInput()
+    DVM_HandlePhysicsUpdate()
+    DVM_HandleUpdate()
+    DVM_HandleDraw()
+    
     Sync()
 loop
+
+// Cleanup game.
+DVM_GameCleanup()
+
+
