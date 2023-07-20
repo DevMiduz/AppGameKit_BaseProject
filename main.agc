@@ -6,11 +6,19 @@ function DVM_HandleInput()
 	DVM_InputHandler_InputDataUpdate()
 endfunction
 	
+function DVM_HandleSceneSync()
+	DVM_SceneManager_SyncScene()
+endfunction
+	
 function DVM_HandlePhysicsUpdate()
 	
 endfunction
 	
 function DVM_HandleUpdate()
+	
+	if DVM_InputHandler_Data.confirm = DVM_CONST_INPUT_PRESSED 
+		DVM_SceneManager_PopScene()
+	endif
 	
 endfunction
 
@@ -34,7 +42,7 @@ do
     DVM_HandlePhysicsUpdate()
     DVM_HandleUpdate()
     DVM_HandleDraw()
-    
+    DVM_HandleSceneSync()
     /*
     Print( DVM_InputHandler_Data.up )
     Print( DVM_InputHandler_Data.down )

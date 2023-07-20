@@ -18,5 +18,13 @@
 #constant DVM_CONST_INPUT_HELD = 2
 #constant DVM_CONST_INPUT_RELEASED = 3
 
-//Scene Manager Constants
+// Scene Constants
+#constant DVM_CONST_SCENE_SPRITE_TYPE = 0
+#constant DVM_CONST_SCENE_TEXT_TYPE = 1
+#constant DVM_CONST_SCENE_BUTTON_TYPE = 2
+#constant DVM_CONST_SCENE_EDIT_BOX_TYPE = 3
+#constant DVM_CONST_SCENE_PARTICLE_TYPE = 4
+
+// Scene Manager Constants
 #constant DVM_CONST_TEST_SCENE = 0
+#constant DVM_CONST_TEST_SCENE_2 = 1

@@ -49,24 +49,32 @@ dynamic_memory=0
 output_path=
 
 [projectfiles]
-FILE_0=main.agc;-1
-FILE_1=constants.agc;-1
+FILE_0=constants.agc;-1
+FILE_1=includes.agc;-1
 FILE_2=init.agc;-1
-FILE_3=includes.agc;-1
-FILE_4=input_handler.agc;-1
-FILE_5=key_constants.agc;-1
+FILE_3=input_handler.agc;-1
+FILE_4=key_constants.agc;-1
+FILE_5=main.agc;-1
 FILE_6=scene_manager.agc;-1
 FILE_7=test_scene.scene;-1
+FILE_8=test_scene_2.scene;-1
+FILE_9=scene.agc;-1
+FILE_10=test_scene.agc;-1
+FILE_11=test_scene_2.agc;-1
 
 [files]
-FILE_NAME_0=1;main.agc;7;0
-FILE_NAME_1=0;constants.agc;21;1
-FILE_NAME_2=0;init.agc;23;2
-FILE_NAME_3=0;includes.agc;5;3
-FILE_NAME_4=0;input_handler.agc;29;4
-FILE_NAME_5=0;key_constants.agc;31;5
-FILE_NAME_6=0;scene_manager.agc;21;6
+FILE_NAME_0=0;constants.agc;25;0
+FILE_NAME_1=0;includes.agc;9;1
+FILE_NAME_2=0;init.agc;22;2
+FILE_NAME_3=0;input_handler.agc;99;3
+FILE_NAME_4=0;key_constants.agc;31;4
+FILE_NAME_5=0;main.agc;19;5
+FILE_NAME_6=0;scene_manager.agc;13;6
 FILE_NAME_7=0;test_scene.scene;0;7
+FILE_NAME_8=0;test_scene_2.scene;0;8
+FILE_NAME_9=0;scene.agc;3;9
+FILE_NAME_10=0;test_scene.agc;0;10
+FILE_NAME_11=1;test_scene_2.agc;0;11
 
 [watchvariables]
 watch_variable=@Version;

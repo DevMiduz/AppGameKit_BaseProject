@@ -8,9 +8,10 @@ global test_scene_tween# as float
 global test_scene_change_window = 1
 global test_scene_loaded = 0
 global test_scene_images as integer[2]
-global test_scene_sprites as integer[1]
-global test_scene_sprites_count_x as float[1]
-global test_scene_sprites_count_y as float[1]
+global test_scene_sprites as integer[2]
+global test_scene_sprites_count_x as float[2]
+global test_scene_sprites_count_y as float[2]
+global test_scene_text as integer[2]
 
 function test_scene_create_window( winflag as integer )
 	test_scene_change_window = winflag
@@ -28,6 +29,16 @@ function test_scene_setup()
 	SetPhysicsWallBottom(1)
 	SetPhysicsWallLeft(1)
 	SetPhysicsWallRight(1)
+	test_scene_images[1] = LoadImage("test_circle.png")
+	test_scene_text[1] = CreateText( "Test Scene 1." )
+	SetTextPosition(test_scene_text[1],32.000000,32.000000)
+	SetTextSize(test_scene_text[1],40.000000)
+	SetTextDepth(test_scene_text[1],9)
+	SetTextVisible(test_scene_text[1],1)
+	test_scene_sprites[1] = CreateSprite( test_scene_images[1] )
+	SetSpritePosition(test_scene_sprites[1],64.000000,192.000000)
+	SetSpriteSize(test_scene_sprites[1],352.000000,352.000000)
+	SetSpriteDepth(test_scene_sprites[1],5000)
 endfunction
 
 function test_scene_sync()
@@ -40,6 +51,9 @@ function test_scene_cleanup()
 	if test_scene_loaded = 0 then exitfunction
 	for i = 0 to test_scene_sprites.length
 		if GetSpriteExists( test_scene_sprites[i] ) then DeleteSprite( test_scene_sprites[i] )
+	next i
+	for i = 0 to test_scene_text.length
+		if GetTextExists( test_scene_text[i] ) then DeleteText( test_scene_text[i] )
 	next i
 		if GetSpriteExists(test_scene_fadesprite) then DeleteSprite(test_scene_fadesprite)
 		test_scene_fadesprite = 0
@@ -113,5 +127,30 @@ scenewallleft: 1
 scenewallright: 1
 scenemaxpolygon: 8
 scenepercentage: 0
+imageindex: 1
+addimage: C:/Users/blair/Documents/Development/projects/AGK/AppGameKit_BaseProject/media/test_circle.png
+imageatlas: 0
+imagerows: 1
+imagecolumns: 1
+spriteindex: 0
+addtext: Text 1
+mediatype: 2
+mediavisible: 1
+mediatext: Test Scene 1.
+spriteposx: 32.000000
+spriteposy: 32.000000
+spritesizex: 238.000000
+spritesizey: 40.000000
+spritedepth: 9
+spriteindex: 1
+addsprite: Sprite 1
+mediatype: 1
+mediavisible: 1
+mediatext: 
+spriteposx: 64.000000
+spriteposy: 192.000000
+spritesizex: 352.000000
+spritesizey: 352.000000
+spritedepth: 5000
 
 REMEND

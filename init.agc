@@ -21,5 +21,11 @@ endfunction
 
 function DVM_GameSetup()
 	DVM_InputHandler_Setup()
-	DVM_SceneManager_PushScene(DVM_CONST_TEST_SCENE)
+	
+	scene as Scene
+	scene = DVM_TestScene_CreateSceneObject()
+	DVM_SceneManager_PushScene(scene)
+	
+	scene = DVM_TestScene2_CreateSceneObject()
+	DVM_SceneManager_PushScene(scene)
 endfunction
