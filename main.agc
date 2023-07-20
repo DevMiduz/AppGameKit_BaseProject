@@ -16,8 +16,14 @@ endfunction
 	
 function DVM_HandleUpdate()
 	
-	if DVM_InputHandler_Data.confirm = DVM_CONST_INPUT_PRESSED 
+	if DVM_InputHandler_Data.cancel = DVM_CONST_INPUT_PRESSED 
 		DVM_SceneManager_PopScene()
+	endif
+	
+	if DVM_InputHandler_Data.confirm = DVM_CONST_INPUT_PRESSED 
+		Scene as scene
+		scene = DVM_TestScene2_CreateSceneObject()
+		DVM_SceneManager_PushScene(scene)
 	endif
 	
 endfunction

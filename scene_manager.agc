@@ -24,6 +24,8 @@ endfunction
 
 function DVM_SceneManager_PushScene(scene as Scene)
 	
+	if(DVM_SceneManager_SceneStack.find(scene.id) <> -1) then exitfunction
+	
 	if DVM_SceneManager_SceneStack.length > -1 
 		current_scene as Scene
 		current_scene = DVM_SceneManager_SceneStack[DVM_SceneManager_SceneStack.length]
@@ -37,17 +39,23 @@ endfunction
 
 function DVM_SceneManager_PopScene()
 	
-	if DVM_SceneManager_SceneStack.length = -1 then exitfunction
+	if DVM_SceneManager_SceneStack.length = 0 then exitfunction
 	
 	scene as Scene
 	scene = DVM_SceneManager_SceneStack[DVM_SceneManager_SceneStack.length]
 	DVM_SceneManager_SceneStack.remove()
 	DVM_Scene_DestroyScene(scene)
 	
-	if DVM_SceneManager_SceneStack.length = -1 then exitfunction
+	select scene.id
+		case DVM_CONST_TEST_SCENE
+			test_scene_cleanup()
+		endcase
+		case DVM_CONST_TEST_SCENE_2
+			test_scene_2_cleanup()
+		endcase
+	endselect
 	
 	scene = DVM_SceneManager_SceneStack[DVM_SceneManager_SceneStack.length]
 	DVM_Scene_RestoreScene(scene)
 	DVM_SceneManager_SceneStack[DVM_SceneManager_SceneStack.length] = scene
-	
 endfunction
